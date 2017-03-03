@@ -21,3 +21,7 @@ nav {
   /*position: absolute;*/
   float: right;
 }
+body{
+  color: #ff6600;
+  background-color: #cc0066;
+}
