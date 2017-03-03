@@ -12,3 +12,16 @@ Player.prototype.takeTurn = function() {
     this.turn = true;
   }
 };
+Player.prototype.roll = function() {
+  var rand = Math.floor(Math.random() * 6) + 1;
+  this.currentScore = rand;
+};
+
+Player.prototype.addPoints = function(rollPoints) {
+  this.scoreTotal += rollPoints;
+};
+
+var player1 = new Player(true);
+var player2 = new Player(false);
+
+var totalRoll;
