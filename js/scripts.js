@@ -101,3 +101,15 @@ $(document).ready(function() {
      }
    }
  }); // end click
+ $("#hold").click(function() {
+   if (player1.turn === true) {
+     player1.takeTurn();
+     player2.takeTurn();
+     player1.addPoints(totalRoll);
+     totalRoll = 0;
+     $(this).attr("disabled", true).removeClass("btn-danger");
+     $("#rolled-total").text("0");
+     $(".p1-total-score").text(player1.scoreTotal);
+     $("#roll").text("Roll");
+     $("#player-msg").text(playerTwoName + ", your turn!");
+   }
