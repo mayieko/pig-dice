@@ -59,3 +59,18 @@ $(document).ready(function() {
             player1.takeTurn();
             player2.takeTurn();
             totalRoll = 0;
+            $("#hold").attr("disabled", true).removeClass("btn-danger");
+        $("#rolled-total").text("0");
+        $("#rolled-number").text(player1.currentScore);
+        $(this).text("Roll");
+        $("#player-msg").text(playerTwoName + ", GO!");
+      }
+      else {
+        totalRoll += player1.currentScore;
+        $("#hold").attr("disabled", false).addClass("btn-danger");
+        $("#rolled-number").text(player1.currentScore);
+        $("#rolled-total").text(totalRoll);
+        $(this).addClass("roll-again").text("Roll Again?");
+      }
+    }
+  }
