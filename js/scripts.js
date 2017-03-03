@@ -113,3 +113,17 @@ $(document).ready(function() {
      $("#roll").text("Roll");
      $("#player-msg").text(playerTwoName + ", your turn!");
    }
+   else {
+     player1.takeTurn();
+     player2.takeTurn();
+     player2.addPoints(totalRoll);
+     totalRoll = 0;
+     $(this).attr("disabled", true).removeClass("btn-danger");
+     $("#rolled-total").text("0");
+     $(".p2-total-score").text(player2.scoreTotal);
+     $("#roll").removeClass("roll-again").text("Roll");
+     $("#player-msg").text(playerOneName + ", your turn!");
+   }
+ });
+
+}); // end ready
