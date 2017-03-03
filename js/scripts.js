@@ -74,3 +74,20 @@ $(document).ready(function() {
       }
     }
   }
+  else {
+     if (player2.scoreTotal >= 100 || player1.scoreTotal >= 100) {
+       $("button").attr("readonly", true);
+     }
+     else {
+       player2.roll();
+       if (player2.currentScore === 1) {
+         player1.takeTurn();
+         player2.takeTurn();
+         totalRoll = 0;
+         $("#hold").attr("disabled", true).removeClass("btn-danger");
+         $("#rolled-total").text("0");
+         $("#rolled-number").text(player2.currentScore);
+         $(this).removeClass("roll-again").text("Roll");
+         totalRoll = 0;
+         $("#player-msg").text(playerOneName + ", GO!");
+       }
