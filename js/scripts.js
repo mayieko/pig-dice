@@ -91,3 +91,13 @@ $(document).ready(function() {
          totalRoll = 0;
          $("#player-msg").text(playerOneName + ", GO!");
        }
+       else {
+         totalRoll += player2.currentScore;
+         $("#hold").attr("disabled", false).addClass("btn-danger");
+         $(this).addClass("roll-again").text("Roll Again?");
+         $("#rolled-total").text(totalRoll);
+         $("#rolled-number").text(player2.currentScore);
+       }
+     }
+   }
+ }); // end click
