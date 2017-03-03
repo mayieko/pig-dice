@@ -25,3 +25,14 @@ var player1 = new Player(true);
 var player2 = new Player(false);
 
 var totalRoll;
+// User Interface Logic
+$(document).ready(function() {
+  var playerOneName;
+  var playerTwoName;
+
+  totalRoll = parseInt($("#rolled-total").text());
+
+  $("#signup-form").submit(function(event){
+    event.preventDefault();
+    playerOneName = $("#player-one-signup").val();
+    playerTwoName = $("#player-two-signup").val();
