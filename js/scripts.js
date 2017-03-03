@@ -47,3 +47,15 @@ $(document).ready(function() {
     $("#player-msg").text(playerOneName + ", GO!");
     $(".game").slideDown(500);
   }); // end submit
+  $("#roll").click(function() {
+      if (player1.turn === true) {
+        if (player1.scoreTotal >= 100 || player2.scoreTotal >= 100) {
+          $("button").attr("readonly", true);
+          alert("Looks like we have a winner!!!!!  ;)");
+        }
+        else {
+          player1.roll();
+          if (player1.currentScore === 1) {
+            player1.takeTurn();
+            player2.takeTurn();
+            totalRoll = 0;
